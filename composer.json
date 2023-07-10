@@ -1,0 +1,26 @@
+{
+    "name": "arturomsoberanes/sobcms",
+    "description": "MicroCMS",
+    "type": "project",
+    "require": {
+        "pecee/simple-router": "5.3.0.5",
+        "illuminate/database": "^10.13"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "Core\\": "Core/"
+        },
+        "files": [
+            "functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Arturo Soberanes",
+            "email": "arturo.soberanes01@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
