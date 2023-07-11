@@ -6,5 +6,6 @@ use Pecee\SimpleRouter\SimpleRouter;
 
 SimpleRouter::get('/', [HomeController::class, 'show']);
 SimpleRouter::get('/posts/{id}', [HomeController::class, 'showPost']);
+SimpleRouter::get('/login', [LoginController::class, 'showLogin']);
 
 SimpleRouter::start();
