@@ -1,7 +1,7 @@
 <?php
-
+namespace App\Controllers;
 use App\Models\User;
-class UserConroller
+class UserController
 {
   public function addUser($data_user)
   {
