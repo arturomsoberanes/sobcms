@@ -3,8 +3,17 @@
     <li class="nav-item">
       <a class="nav-link" href="/">Blog</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Login</a>
-    </li>
+    <?php if (Core\Auth::check()): ?>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Admin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    <?php else: ?>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+    <?php endif; ?>
   </ul>
 </nav>
