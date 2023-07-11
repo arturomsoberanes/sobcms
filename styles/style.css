@@ -81,3 +81,13 @@ body {
   text-align: start;
   max-width: 600px;
 }
+.section-auth {
+  color: white;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section-auth article {
+  max-width: 600px;
+}
