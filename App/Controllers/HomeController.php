@@ -9,6 +9,7 @@ class HomeController
     return view('index', [
       'title' => 'SOBCMS',
       'posts' => PostController::getAllPosts(),
+      'dir' => 'posts',
       'component' => 'list-posts'
     ]);
   }
@@ -19,6 +20,7 @@ class HomeController
     return view('index', [
       'title' => $post->title,
       'post' => $post,
+      'dir' => 'posts',
       'component' => 'post'
     ]);
   }
