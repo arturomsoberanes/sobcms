@@ -20,6 +20,26 @@ function redirect($path)
   header("Location: {$path}");
 }
 
+function showDate($timestamp)
+{
+	$timestamp = strtotime($timestamp);
+	$fmt = datefmt_create(
+		'es_ES',
+		IntlDateFormatter::FULL,
+		IntlDateFormatter::FULL,
+		'America/Mexico_City',
+		IntlDateFormatter::GREGORIAN,
+		'd MMM YYYY'
+	);
+
+	$newDate = datefmt_format($fmt, $timestamp);
+
+	if (!$newDate) {
+		return 'Fecha invalida';
+	}
+
+	return $newDate;
+}
 
 /**
  * Get url for a route by using either name/alias, class or method name.

@@ -5,5 +5,6 @@ use App\Controllers\SearchController;
 use Pecee\SimpleRouter\SimpleRouter;
 
 SimpleRouter::get('/', [HomeController::class, 'show']);
+SimpleRouter::get('/posts/{id}', [HomeController::class, 'showPost']);
 
 SimpleRouter::start();
