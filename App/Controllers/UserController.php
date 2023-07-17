@@ -1,24 +1,24 @@
 <?php
 namespace App\Controllers;
 use App\Models\User;
+use Illuminate\Database\QueryException;
 class UserController
 {
-  public function addUser($data_user)
+  public function addUser()
   {
-    extract($data_user);
     try {
-    $user = new User();
-    $user->name = $name;
-    $user->email = $email;
-    $user->username = $username;
-    $user->password = password_hash($password, PASSWORD_DEFAULT);
+      $user = new User();
+      $user->name = $_POST['name'];
+      $user->email = $_POST['email'];
+      $user->username = $_POST['username'];
+      $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    $user->save();
+      $user->save();
 
-    return $user;
-  } catch (Exception $e) {
-    // Handle the exception here
-    echo $e->getMessage();
-  }
+      return redirect('/');
+    } catch (QueryException $e) {
+      // Handle the exception here
+      echo $e->getMessage();
+    }
   }
 }

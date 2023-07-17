@@ -3,12 +3,21 @@ namespace App\Controllers;
 use Core\Auth;
 class LoginController
 {
+  protected $dir = 'auth';
   public function showLogin()
   {
     return view('index', [
       'title' => 'Login',
-      'dir' => 'auth',
+      'dir' => $this->dir,
       'component' => 'login'
+    ]);
+  }
+  public function showSignin()
+  {
+    return view('index', [
+      'title' => 'Sign In',
+      'dir' => $this->dir,
+      'component' => 'signin'
     ]);
   }
 

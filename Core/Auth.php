@@ -38,7 +38,6 @@ class Auth
   }
   public static function logout()
   {
-    session_start();
     session_destroy();
   }
 }

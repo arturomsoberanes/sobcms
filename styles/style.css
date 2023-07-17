@@ -68,12 +68,14 @@ body {
   background: linear-gradient(0deg, rgba(34, 34, 42, 1) 0%, rgba(111, 47, 125, 1) 100%);
   width: 600px;
 }
-.section-show-post {
+section {
   color:white;
-  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.section-show-post {
+  min-height: 80vh;
   width: 100%;
   margin: 2em 0;
 }
@@ -84,10 +86,20 @@ body {
 .section-auth {
   color: white;
   height: 80vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .section-auth article {
-  max-width: 600px;
+  width: 50%;
+}
+.section-admin {
+  height: 80vh;
+  align-items: start;
+}
+.section-admin article{
+  margin-top: 3em;
+}
+.section-write {
+  margin: 3em 0;
+}
+.section-write article{
+  max-width: 50%;
 }

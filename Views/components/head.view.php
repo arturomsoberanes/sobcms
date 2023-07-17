@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="<?= Core\App::get('config')['domain_site'] . '/styles/style.css'?>">
   
   <title><?= $title; ?></title>
+    <script src="https://cdn.tiny.cloud/1/<?= Core\App::get('config')['KEY_API_TINY'];?>/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
   </head>
   
   <body>
