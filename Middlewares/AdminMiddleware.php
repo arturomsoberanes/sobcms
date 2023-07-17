@@ -12,11 +12,9 @@ class AdminMiddleware implements IMiddleware
     {
     
         // Authenticate user, will be available using request()->user
-        dd($request);
-        $request->user = Auth::ensureSessionStarted();
-        dd($request->user);
+        $request->user = Auth::check();
         // If authentication failed, redirect request to user-login page.
-        if($request->user === null) {
+        if($request->user === false) {
             $request->setRewriteUrl(url('/login'));
         }
 
