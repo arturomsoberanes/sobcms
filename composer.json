@@ -10,6 +10,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "App/",
+            "Middlewares\\": "Middlewares/",
             "Core\\": "Core/"
         },
         "files": [
