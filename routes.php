@@ -24,4 +24,14 @@ SimpleRouter::group(['middleware' => AdminMiddleware::class], function () {
 });
 
 
+SimpleRouter::error(function(Request $request, \Exception $exception) {
+
+    switch($exception->getCode()) {
+        // Page not found
+        case 404:
+            response()->redirect('/not-found');
+    }
+    
+});
+
 SimpleRouter::start();
