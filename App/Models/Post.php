@@ -10,6 +10,7 @@ class Post extends Model
     'title',
     'excerpt',
     'content',
+    'featured_image',
     'published_on'
   ];
 }
