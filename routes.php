@@ -3,6 +3,7 @@
 use App\Controllers\AdminController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
+use App\Controllers\PostController;
 use App\Controllers\UserController;
 use Pecee\SimpleRouter\SimpleRouter;
 use Pecee\Http\Request;
@@ -19,19 +20,21 @@ SimpleRouter::post('/login', [LoginController::class, 'login']);
 SimpleRouter::group(['middleware' => AdminMiddleware::class], function () {
   SimpleRouter::get('/admin', [AdminController::class, 'showAdmin']);
   SimpleRouter::get('/admin/write/{id?}', [AdminController::class, 'showWritePost']);
+  SimpleRouter::post('/admin/new-post', [PostController::class, 'savePost']);
   SimpleRouter::get('/signin', [LoginController::class, 'showSignin']);
   SimpleRouter::post('/signin', [UserController::class, 'addUser']);
 });
 
 
-SimpleRouter::error(function(Request $request, \Exception $exception) {
+/*
 
+SimpleRouter::error(function(Request $request, \Exception $exception) {
     switch($exception->getCode()) {
         // Page not found
         case 404:
             response()->redirect('/not-found');
     }
-    
 });
+*/
 
 SimpleRouter::start();
