@@ -37,3 +37,7 @@
 # Ignorar archivos sensibles
 /secret-key.txt
 /database-credentials.json
+
+# Ignorar archivos en media_upload
+
+/media_upload/*
