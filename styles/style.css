@@ -57,6 +57,19 @@ body {
   -webkit-text-stroke: 1px rgb(225, 0, 161);
 }
 
+form {
+  background: radial-gradient(circle at 100% 100%, #22222A 0, #22222A 2px, transparent 2px) 0% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 0 100%, #22222A 0, #22222A 2px, transparent 2px) 100% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 100% 0, #22222A 0, #22222A 2px, transparent 2px) 0% 100%/8px 8px no-repeat,
+    radial-gradient(circle at 0 0, #22222A 0, #22222A 2px, transparent 2px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(#22222A, #22222A) 50% 50%/calc(100% - 12px) calc(100% - 16px) no-repeat,
+    linear-gradient(#22222A, #22222A) 50% 50%/calc(100% - 16px) calc(100% - 12px) no-repeat,
+    linear-gradient(90deg, #ff2626 0%, #8e48e0 100%);
+  border-radius: 8px;
+  padding: 2em;
+  border-radius: 8px;
+}
+
 section {
   color:white;
   display: flex;
