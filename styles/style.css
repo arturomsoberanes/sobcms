@@ -96,9 +96,21 @@ section {
 }
 .section-blog article {
   border: 0px;
-  background: rgb(34, 34, 42);
-  background: linear-gradient(0deg, rgba(34, 34, 42, 1) 0%, rgba(111, 47, 125, 1) 100%);
+  background: radial-gradient(circle at 100% 100%, #22222a 0, #22222a 2px, transparent 2px) 0% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 0 100%, #22222a 0, #22222a 2px, transparent 2px) 100% 0%/8px 8px no-repeat,
+    radial-gradient(circle at 100% 0, #22222a 0, #22222a 2px, transparent 2px) 0% 100%/8px 8px no-repeat,
+    radial-gradient(circle at 0 0, #22222a 0, #22222a 2px, transparent 2px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(#22222a, #22222a) 50% 50%/calc(100% - 12px) calc(100% - 16px) no-repeat,
+    linear-gradient(#22222a, #22222a) 50% 50%/calc(100% - 16px) calc(100% - 12px) no-repeat,
+    linear-gradient(90deg, #ff2626 0%, rgba(240, 206, 0, 1) 0%, #00bec8 100%);
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
   width: 600px;
+}
+.section-blog article img {
+  height: 100%;
+  object-fit: cover;
 }
 
 .section-show-post {
@@ -111,17 +123,18 @@ section {
   max-width: 600px;
 }
 
-
 .section-auth {
   color: white;
   height: 80vh;
 }
+
 .section-auth article {
   width: 50%;
 }
+
 @media only screen and (max-width:650px) {
   .section-auth article {
-    width: 50%;
+    width: 80%;
   }
 }
 
