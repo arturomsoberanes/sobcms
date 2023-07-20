@@ -26,7 +26,6 @@ SimpleRouter::group(['middleware' => AdminMiddleware::class], function () {
 });
 
 
-/*
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
     switch($exception->getCode()) {
@@ -35,6 +34,5 @@ SimpleRouter::error(function(Request $request, \Exception $exception) {
             response()->redirect('/not-found');
     }
 });
-*/
 
 SimpleRouter::start();
