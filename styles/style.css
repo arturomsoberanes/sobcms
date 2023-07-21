@@ -57,7 +57,7 @@ body {
   -webkit-text-stroke: 1px rgb(225, 0, 161);
 }
 
-form {
+.section-auth form {
   background: radial-gradient(circle at 100% 100%, #22222A 0, #22222A 2px, transparent 2px) 0% 0%/8px 8px no-repeat,
     radial-gradient(circle at 0 100%, #22222A 0, #22222A 2px, transparent 2px) 100% 0%/8px 8px no-repeat,
     radial-gradient(circle at 100% 0, #22222A 0, #22222A 2px, transparent 2px) 0% 100%/8px 8px no-repeat,

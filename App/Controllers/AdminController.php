@@ -10,6 +10,7 @@ class AdminController
   {
     return view('index', [
       'title' => 'Admin',
+      'posts' => PostController::getAllPosts(),
       'dir' => 'admin',
       'component' => 'admin'
     ]);
