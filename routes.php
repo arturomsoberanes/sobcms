@@ -21,10 +21,10 @@ SimpleRouter::group(['middleware' => AdminMiddleware::class], function () {
   SimpleRouter::get('/admin', [AdminController::class, 'showAdmin']);
   SimpleRouter::get('/admin/write/{id?}', [AdminController::class, 'showWritePost']);
   SimpleRouter::post('/admin/new-post', [PostController::class, 'savePost']);
+  SimpleRouter::post('/admin/delete/post/{id?}', [PostController::class, 'deletePost']);
   SimpleRouter::get('/signin', [LoginController::class, 'showSignin']);
   SimpleRouter::post('/signin', [UserController::class, 'addUser']);
 });
-
 
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
