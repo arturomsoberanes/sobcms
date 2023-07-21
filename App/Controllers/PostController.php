@@ -45,7 +45,6 @@ class PostController
   {
     try {
 
-      $data = [$_POST, $_FILES];
       $post = new Post;
       $post->title = $this->transformContent($_POST['title']);
       $post->excerpt = $this->transformContent($_POST['excerpt']);
@@ -69,6 +68,14 @@ class PostController
     try {
 
       $post = Post::find($post_id);
+
+      // Delete the image file from the filesystem
+      if ($post->featured_image) {
+        // Get the image path from the database
+        $image_path = $post->featured_image;
+        unlink($image_path);
+      }
+
       $post->delete();
 
       return redirect('/admin');
