@@ -45,13 +45,14 @@ class PostController
   {
     try {
 
+      $data = [$_POST, $_FILES];
       $post = new Post;
       $post->title = $this->transformContent($_POST['title']);
       $post->excerpt = $this->transformContent($_POST['excerpt']);
       $post->content = $this->transformContent($_POST['content']);
       $post->published_on = date('Y-m-d H:i:s');
 
-      if(isset($_FILES['featured_image'])) {
+      if($_FILES['featured_image']['size'] > 0) {
         $post->featured_image = $this->saveImage($_FILES['featured_image']);
       }
 
