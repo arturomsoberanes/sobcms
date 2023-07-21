@@ -63,5 +63,18 @@ class PostController
       echo $e->getMessage();
     }
   }
+  public function deletePost($post_id)
+  {
+    try {
+
+      $post = Post::find($post_id);
+      $post->delete();
+
+      return redirect('/admin');
+    } catch (QueryException $e) {
+      // Handle the exception here
+      echo $e->getMessage();
+    }
+  }
 
 }
