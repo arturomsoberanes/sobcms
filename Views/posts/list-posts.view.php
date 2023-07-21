@@ -3,9 +3,11 @@
   <?php foreach ($posts as $post): ?>
     <article class="card text-bg-dark mb-3">
       <div class="row g-0">
-        <div class="col-md-4">
-          <img src="<?= $post->featured_image; ?>" class="img-fluid rounded-start" alt="featured image">
-        </div>
+        <?php if ($post->featured_image): ?>
+          <div class="col-md-4">
+            <img src="<?= $post->featured_image; ?>" class="img-fluid rounded-start" alt="featured image">
+          </div>
+        <?php endif; ?>
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">
