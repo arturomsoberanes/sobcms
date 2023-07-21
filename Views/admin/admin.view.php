@@ -15,7 +15,7 @@
               <?= $post->title; ?>
             </div>
             <div class="col-md-4">
-              <form class="d-inline-block ms-4" action="/admin/delete/post/<?= $post->id ?>" method="post"
+              <form class="d-inline-block ms-4" action="admin/delete/post/<?= $post->id ?>" method="post"
                 onsubmit="return confirm('¿Deseas eliminar la busqueda?')">
                 <button class="btn btn-danger bi bi-trash" href="posts"></button>
               </form>
