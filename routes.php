@@ -18,12 +18,19 @@ SimpleRouter::get('/logout', [LoginController::class, 'logout']);
 SimpleRouter::post('/login', [LoginController::class, 'login']);
 
 SimpleRouter::group(['middleware' => AdminMiddleware::class], function () {
+  // Get
   SimpleRouter::get('/admin', [AdminController::class, 'showAdmin']);
   SimpleRouter::get('/admin/write/{id?}', [AdminController::class, 'showWritePost']);
+  SimpleRouter::get('/admin/user/{id?}', [AdminController::class, 'showUser']);
+  // Post
+  
+  // Posts
   SimpleRouter::post('/admin/new-post', [PostController::class, 'savePost']);
   SimpleRouter::post('/admin/delete/post/{id?}', [PostController::class, 'deletePost']);
-  SimpleRouter::get('/signin', [LoginController::class, 'showSignin']);
-  SimpleRouter::post('/signin', [UserController::class, 'addUser']);
+  // Users
+  SimpleRouter::post('/admin/user/add', [UserController::class, 'addUser']);
+  SimpleRouter::post('/admin/delete/user/{id?}', [UserController::class, 'deleteUser']);
+  SimpleRouter::post('/admin/user/update/{id}', [UserController::class, 'updateUser']);
 });
 
 
