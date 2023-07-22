@@ -4,6 +4,14 @@ use App\Models\User;
 use Illuminate\Database\QueryException;
 class UserController
 {
+  public static function getAllUsers() {
+    try {
+      $users = User::all();
+      return $users;
+    } catch (QueryException $e) {
+      echo $e->getMessage();
+    }
+  }
   public function addUser()
   {
     try {
