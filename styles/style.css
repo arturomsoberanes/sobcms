@@ -139,11 +139,15 @@ section {
 }
 
 .section-admin {
-  height: 80vh;
-  align-items: start;
+  min-height: 80vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
 }
 .section-admin article{
   margin-top: 3em;
+  width: 100%;
+  max-width: 800px;
 }
 .section-write {
   margin: 3em 0;
