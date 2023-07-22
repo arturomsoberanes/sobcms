@@ -17,7 +17,8 @@ class HomeController
   public static function checkIfPostExist($post_id) {
     $post = PostController::getOnePost($post_id);
     if (!$post) {
-      return static::showNotFound();
+      static::showNotFound();
+      die();
     }
     return $post;
   }
