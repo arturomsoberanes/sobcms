@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use App\Controllers\PostController;
 use App\Controllers\HomeController;
+use App\Controllers\UserController;
 
 class AdminController
 {
@@ -11,6 +12,7 @@ class AdminController
     return view('index', [
       'title' => 'Admin',
       'posts' => PostController::getAllPosts(),
+      'users' => UserController::getAllUsers(),
       'dir' => 'admin',
       'component' => 'admin'
     ]);
