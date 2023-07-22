@@ -1,6 +1,6 @@
 <section class="section-auth">
   <article>
-    <form action="/signin" method="post">
+    <form action="/admin/user/<?= $user ? "update/{$user->id}" : 'add' ?>" method="post">
       <div class="mb-3">
         <label for="name" class="form-label">Name:</label>
         <input type="text" class="form-control" id="name" name="name" aria-describedby="name" required>
