@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 use App\Models\User;
+use App\Controllers\HomeController;
 use Illuminate\Database\QueryException;
 class UserController
 {
@@ -8,6 +9,19 @@ class UserController
     try {
       $users = User::all();
       return $users;
+    } catch (QueryException $e) {
+      echo $e->getMessage();
+    }
+  }
+  public static function getOneUser($user_id)
+  {
+    try {
+      $user = User::find($user_id);
+      if (!$user) {
+        HomeController::showNotFound();
+        die();
+      }
+      return $user;
     } catch (QueryException $e) {
       echo $e->getMessage();
     }
@@ -24,6 +38,17 @@ class UserController
       $user->save();
 
       return redirect('/');
+    } catch (QueryException $e) {
+      // Handle the exception here
+      echo $e->getMessage();
+    }
+  }
+  public function deleteUser($post_id)
+  {
+    try {
+      $user = User::find($post_id);
+      $user->delete();
+      return redirect('/admin');
     } catch (QueryException $e) {
       // Handle the exception here
       echo $e->getMessage();
