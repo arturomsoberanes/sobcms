@@ -5,7 +5,7 @@
       <a class="btn btn-success" href="admin/write">
         <span class="bi bi-journal-plus fw-bold"></span> Add Post
       </a>
-      <a class="btn btn-warning" href="signin">
+      <a class="btn btn-warning" href="admin/user">
         <span class="bi bi-person-fill-add fw-bold"></span> Add User
       </a>
     </div>
