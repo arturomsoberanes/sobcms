@@ -12,14 +12,6 @@ class LoginController
       'component' => 'login'
     ]);
   }
-  public function showSignin()
-  {
-    return view('index', [
-      'title' => 'Sign In',
-      'dir' => $this->dir,
-      'component' => 'signin'
-    ]);
-  }
 
   public function login()
   {

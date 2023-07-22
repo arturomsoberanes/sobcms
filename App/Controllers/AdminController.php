@@ -29,4 +29,17 @@ class AdminController
       'post' => $post ? $post : false
     ]);
   }
+  public function showUser($user = false)
+  {
+    if ($user) {
+      $user = UserController::getOneUser($user);
+    }
+
+    return view('index', [
+      'title' => $user ? 'Update User' : 'New User',
+      'dir' => 'auth',
+      'component' => 'user',
+      'user' => $user ? $user : false
+    ]);
+  }
 }
