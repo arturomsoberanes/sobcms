@@ -26,13 +26,13 @@ SimpleRouter::group(['middleware' => AdminMiddleware::class], function () {
   
   // Posts
   SimpleRouter::post('/admin/new-post', [PostController::class, 'savePost']);
-  SimpleRouter::post('/admin/delete/post/{id?}', [PostController::class, 'deletePost']);
+  SimpleRouter::post('/admin/update/post/{id}', [PostController::class, 'updatePost']);
+  SimpleRouter::post('/admin/delete/post/{id}', [PostController::class, 'deletePost']);
   // Users
   SimpleRouter::post('/admin/user/add', [UserController::class, 'addUser']);
   SimpleRouter::post('/admin/delete/user/{id?}', [UserController::class, 'deleteUser']);
   SimpleRouter::post('/admin/user/update/{id}', [UserController::class, 'updateUser']);
 });
-
 
 SimpleRouter::error(function(Request $request, \Exception $exception) {
     switch($exception->getCode()) {
