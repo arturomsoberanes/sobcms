@@ -17,12 +17,19 @@
           <?= $post ? $post->content : ''; ?>
         </textarea>
       </div>
+      <?php if ($post): ?>
+        <div class="mb-3">
+          <p>Current Featured Image:</p>
+          <img class="img-thumbnail" alt="Featured Image"
+            src="<?= Core\App::get('config')['domain_site'] . '/' . $post->featured_image ?>" />
+        </div>
+      <?php endif; ?>
       <div class="mb-3">
         <label for="featured_image" class="form-label">Featured Image (Optional):</label>
-        <input class="form-control" type="file" id="featured_image" name="featured_image">
+        <input class="form-control" type="file" id="featured_image" name="featured_image" />
       </div>
       <button type="submit" class="btn btn-warning">
-        <?= $post ? 'Update' : 'Add' ?>
+        <?= $post ? 'Update Post' : 'Add Post' ?>
       </button>
     </form>
   </article>
