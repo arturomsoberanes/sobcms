@@ -43,10 +43,30 @@ class UserController
       echo $e->getMessage();
     }
   }
-  public function deleteUser($post_id)
+  public function updateUser($user_id)
   {
     try {
-      $user = User::find($post_id);
+      $user = User::find($user_id);
+      foreach ($_POST as $key => $value) {
+        if ($value !== '') {
+          $user->$key = $value;
+          if ($key === 'password') {
+            $user->password = password_hash($user->password, PASSWORD_DEFAULT);
+          }
+        }
+      }
+
+      $user->save();
+      return redirect('/admin');
+    } catch (QueryException $e) {
+      // Handle the exception here
+      echo $e->getMessage();
+    }
+  }
+  public function deleteUser($user_id)
+  {
+    try {
+      $user = User::find($user_id);
       $user->delete();
       return redirect('/admin');
     } catch (QueryException $e) {
