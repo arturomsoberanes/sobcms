@@ -1,10 +1,10 @@
 <section class="section-write">
   <article>
-    <form action="<?= $post ? 'write/' . $post->id : 'new-post' ?>" method="post" enctype="multipart/form-data">
+    <form action="/admin/<?= $post ? 'update/post/' . $post->id : 'new-post' ?>" method="post" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
         <input type="text" class="form-control" id="title" name="title" aria-describedby="title"
-          value="<?= $post ? $post->title : ''; ?>" />
+          value="<?= $post ? $post->title : ''; ?>" required />
       </div>
       <div class="mb-3">
         <label for="excerpt" class="form-label">Excerpt:</label>
