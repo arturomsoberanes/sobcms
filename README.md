@@ -8,7 +8,7 @@
   <a href="#art-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#toolbox-installation">Installation</a> &#xa0; | &#xa0;
-  <a href="#joystickhow-to-play">How to Play</a> &#xa0; | &#xa0;
+  <a href="#joystick-how-to-config-a-tinymce-editor">How to config a TinyMCE editor</a> &#xa0; | &#xa0;
   <a href="#briefcase-license">License</a> &#xa0; | &#xa0;
   <a href="https://github.com/arturomsoberanes" target="_blank">Author</a>
 </p>
@@ -54,6 +54,26 @@ Go to directory
 $ cd sobcms
 ```
 
+Please create a config file like this
+
+```php
+
+<?php
+return [
+  'database' => [ // Credentials of the database
+    'type' => 'mysql',
+    'host' => '127.0.0.1:3306',
+    'database' => 'name_database',
+    'user' => 'user_database',
+    'password' => 'password_database',
+  ],
+  'error_handling' => true, //if the site is in production this should be in false
+  'domain_site' => 'http://localhost:8080', // Your domain
+  'KEY_API_TINY' => 'your_tinyAPI_key', // Go to tiny.cloud for more information
+];
+
+```
+
 Install the dependecies
 
 ```bash
@@ -65,7 +85,20 @@ You con use XAMPP or WAMP for run the proyect but if you prefer you can use
 ```bash
 $ php -S localhost:8080
 ```
+
+
 And that's it!
+
+
+## :joystick: How to config a TinyMCE editor ##
+
+For use the TinyMCE editor you'll should have the Tiny API key from:
+[Tiny Cloud](https://www.tiny.cloud/)
+
+Once you have the Tiny API key you can add it in your config file
+like i show you in <a href="#toolbox-installation">"Installation"</a>
+
+And that's all!!
 
 
 ## :briefcase:	 License ##
