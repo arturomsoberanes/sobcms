@@ -1,4 +1,3 @@
-
 # Use an official PHP runtime as the base image
 FROM php:8.1-apache
 
@@ -8,12 +7,13 @@ WORKDIR /var/www/html
 # Copy the local project files into the container at /var/www/html
 COPY . /var/www/html
 
-# Install system dependencies and PHP extensions
+# Install system dependencies, PHP extensions, and PostgreSQL client
 RUN apt-get update && \
     apt-get install -y \
     git \
     unzip \
-    && docker-php-ext-install pdo pdo_mysql
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
