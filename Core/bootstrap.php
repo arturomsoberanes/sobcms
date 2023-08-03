@@ -2,6 +2,12 @@
 
 use Core\App;
 use Core\Auth;
+use App\Controllers\ConfigController;
+
+if (!ConfigController::checkIfConfigExists('config.php')) {
+  require 'route-config.php';
+  die();
+}
 
 App::set('config', require 'config.php');
 
