@@ -8,8 +8,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html
 
 # Install system dependencies, PHP extensions, and PostgreSQL client
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt update && \
+    apt install -y \
     git \
     unzip \
     libpq-dev \
