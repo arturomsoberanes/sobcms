@@ -17,7 +17,9 @@ RUN apt update && \
     && docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
 # This will allow us use our .htacces
+RUN sed -i 's/Listen 80/Listen 443/g' /etc/apache2/ports.conf
 RUN sed -i '/<VirtualHost \*:80>/a <Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride All\n    Require all granted\n</Directory>' /etc/apache2/sites-available/000-default.conf
+RUN sed -i '/<VirtualHost \*:443>/a <Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride All\n    Require all granted\n</Directory>' /etc/apache2/sites-available/default-ssl.conf
 
 RUN a2enmod rewrite
 
@@ -27,8 +29,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install project dependencies
 RUN composer install
 
-# Expose port 80 to the outside world
-EXPOSE 80
+# Expose port 443 to the outside world
+EXPOSE 443
 
 # Command to run the PHP application
 CMD ["apache2-foreground"]
