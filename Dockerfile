@@ -30,7 +30,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer install
 
 # Expose port 443 to the outside world
-EXPOSE 443
+EXPOSE ${PORT:-443}
 
 # Command to run the PHP application
 CMD ["apache2-foreground"]
