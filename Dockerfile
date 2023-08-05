@@ -1,3 +1,5 @@
+# syntax = docker/dockerfile:1.2
+
 # Use an official PHP runtime as the base image
 FROM php:8.1-apache
 
@@ -20,9 +22,9 @@ RUN apt update && \
 RUN sed -i 's/Listen 80/Listen 443/g' /etc/apache2/ports.conf
 RUN sed -i '/<VirtualHost \*:80>/a <Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride All\n    Require all granted\n</Directory>' /etc/apache2/sites-available/000-default.conf
 RUN sed -i '/<VirtualHost \*:443>/a <Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride All\n    Require all granted\n</Directory>' /etc/apache2/sites-available/default-ssl.conf
-# This add the SeverName for localhost and for fl0.io
+# This add the SeverName for localhost and for onrender.com
 RUN sed -i '$ a\
-ServerName 127.0.0.1\nServerName fl0.io' /etc/apache2/apache2.conf
+ServerName 127.0.0.1\nServerName onrender.com' /etc/apache2/apache2.conf
 
 RUN a2enmod rewrite
 
@@ -31,6 +33,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Install project dependencies
 RUN composer install
+
+# This is for deploy my app on render.com
+RUN --mount=type=secret,id=config,dst=/etc/secrets/config mv /etc/secrets/config /var/www/html/config.php
 
 # Expose port 443 to the outside world
 EXPOSE ${PORT:-443}
