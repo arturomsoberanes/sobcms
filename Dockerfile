@@ -20,8 +20,9 @@ RUN apt update && \
 RUN sed -i 's/Listen 80/Listen 443/g' /etc/apache2/ports.conf
 RUN sed -i '/<VirtualHost \*:80>/a <Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride All\n    Require all granted\n</Directory>' /etc/apache2/sites-available/000-default.conf
 RUN sed -i '/<VirtualHost \*:443>/a <Directory /var/www/html>\n    Options Indexes FollowSymLinks\n    AllowOverride All\n    Require all granted\n</Directory>' /etc/apache2/sites-available/default-ssl.conf
+# This add the SeverName for localhost and for fl0.io
 RUN sed -i '$ a\
-ServerName 127.0.0.1' /etc/apache2/apache2.conf
+ServerName 127.0.0.1\nServerName fl0.io' /etc/apache2/apache2.conf
 
 RUN a2enmod rewrite
 
