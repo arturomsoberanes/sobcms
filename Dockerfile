@@ -35,7 +35,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer install
 
 # This is for deploy my app on render.com
-RUN --mount=type=secret,id=config,dst=/etc/secrets/config mv /etc/secrets/config /var/www/html/config.php
+RUN --mount=type=secret,id=config,dst=/etc/secrets/config ls /etc/secrets/
 
 # Expose port 443 to the outside world
 EXPOSE ${PORT:-443}
