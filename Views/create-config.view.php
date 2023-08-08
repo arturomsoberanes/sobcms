@@ -51,8 +51,8 @@
       <p>If your site is in production this option should be unselected</p>
     </div>
     <div class="form-group mb-3">
-      <label for="domain_site">Domain site without https/http:</label>
-      <input type="text" class="form-control" name="domain_site" id="domain_site" placeholder="mydomain.com" required>
+      <label for="domain_site">Domain site with https/http:</label>
+      <input type="text" class="form-control" name="domain_site" id="domain_site" placeholder="https://mydomain.com" required>
     </div>
     <div class="form-group mb-3">
       <label for="KEY_API_TINY">KEY_API_TINY</label>
