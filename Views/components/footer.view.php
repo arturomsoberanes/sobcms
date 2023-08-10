@@ -13,6 +13,9 @@
     ]
   });
 </script>
+<footer class="footer-app">
+  <p>Made with ❤️ by <a href="http://github.com/arturomsoberanes" target="_blank">Arturo Soberanes</a></p>
+</footer>
 </body>
 
 </html>
