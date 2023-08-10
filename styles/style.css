@@ -71,7 +71,7 @@ body {
 }
 
 section {
-  color:white;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,6 +82,7 @@ section {
     max-width: 100%;
     height: auto;
   }
+
   section article {
     text-align: start;
     max-width: 80%;
@@ -94,6 +95,7 @@ section {
   flex-direction: column;
   align-items: center;
 }
+
 .section-blog article {
   border: 0px;
   background: radial-gradient(circle at 100% 100%, #22222a 0, #22222a 2px, transparent 2px) 0% 0%/8px 8px no-repeat,
@@ -108,6 +110,7 @@ section {
   box-sizing: border-box;
   width: 600px;
 }
+
 .section-blog article img {
   height: 100%;
   object-fit: cover;
@@ -118,7 +121,8 @@ section {
   width: 100%;
   margin: 2em 0;
 }
-.section-show-post article{
+
+.section-show-post article {
   text-align: start;
   max-width: 600px;
 }
@@ -144,19 +148,41 @@ section {
   align-items: center;
   justify-content: start;
 }
-.section-admin article{
+
+.section-admin article {
   margin-top: 3em;
   width: 100%;
   max-width: 800px;
 }
+
 .section-write {
   margin: 3em 0;
 }
-.section-write article{
+
+.section-write article {
   max-width: 50%;
 }
+
 @media only screen and (max-width:650px) {
   .section-write article {
     max-width: 90%;
   }
+}
+
+.footer-app {
+  height: 10vh;
+  margin-top: 1em;
+  display: flex;
+  border-top: 1px solid #FFB039;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.footer-app p {
+  margin: 0;
+}
+
+.footer-app a {
+  color:#FF36F7;
 }
