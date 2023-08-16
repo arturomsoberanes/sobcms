@@ -42,7 +42,7 @@ if (!$capsule->schema()->hasTable('posts') && !$capsule->schema()->hasTable('use
         $table->string('title');
         $table->text('excerpt');
         $table->text('content');
-        $table->string('featured_image');
+        $table->string('featured_image', 255)->nullable();
         $table->date('published_on');
     });
 
@@ -60,5 +60,4 @@ if (!$capsule->schema()->hasTable('posts') && !$capsule->schema()->hasTable('use
         'username' => 'admin',
         'password' => password_hash('1234', PASSWORD_DEFAULT)
     ]);
-
 }
