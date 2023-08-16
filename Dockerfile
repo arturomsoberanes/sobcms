@@ -16,7 +16,7 @@ RUN apt update && \
     git \
     unzip \
     libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql intl
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql php-intl
 
 # This will allow us use our .htacces
 RUN sed -i 's/Listen 80/Listen 443/g' /etc/apache2/ports.conf
