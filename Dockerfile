@@ -16,7 +16,7 @@ RUN apt update && \
     git \
     unzip \
     libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql intl
 
 # This will allow us use our .htacces
 RUN sed -i 's/Listen 80/Listen 443/g' /etc/apache2/ports.conf
@@ -34,7 +34,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install project dependencies
 RUN composer install
 
-# This is for deploy my app on render.com
+# This is for deploy my app on render.com wih the free plan
+# If you don't use render you can skip this two lines
 RUN touch /var/www/html/config.php
 RUN --mount=type=secret,id=config,dst=/etc/secrets/config cat /etc/secrets/config > /var/www/html/config.php
 
