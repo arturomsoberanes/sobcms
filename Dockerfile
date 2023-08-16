@@ -1,7 +1,7 @@
 # syntax = docker/dockerfile:1.2
 
 # Use an official PHP runtime as the base image
-FROM php:8.1-apache
+FROM php:8.2-apache
 
 # Set the working directory inside the container
 WORKDIR /var/www/html
@@ -16,7 +16,7 @@ RUN apt update && \
     git \
     unzip \
     libpq-dev \
-    && docker-php-ext-install pdo pdo_mysql pdo_pgsql php-intl
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql
 
 # This will allow us use our .htacces
 RUN sed -i 's/Listen 80/Listen 443/g' /etc/apache2/ports.conf
