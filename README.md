@@ -20,6 +20,11 @@
 
 Is a lightweight and versatile micro Content Management System (CMS) thoughtfully crafted in PHP, exclusively tailored to cater to your personal project needs. This compact yet powerful CMS enables you to efficiently create and manage content without the complexity of larger systems, making it an ideal companion for your individual endeavors.
 
+## :desktop_computer: Demo ##
+
+If you want watch a demo of this project
+please click [here](https://sobcms.onrender.com)
+
 ## :art: Technologies ##
 
 - [HTML](https://www.w3schools.com/html/)
@@ -54,26 +59,6 @@ Go to directory
 $ cd sobcms
 ```
 
-Please create a config file like this
-
-```php
-
-<?php
-return [
-  'database' => [ // Credentials of the database
-    'type' => 'mysql',
-    'host' => '127.0.0.1:3306',
-    'database' => 'name_database',
-    'user' => 'user_database',
-    'password' => 'password_database',
-  ],
-  'error_handling' => true, //if the site is in production this should be in false
-  'domain_site' => 'http://localhost:8080', // Your domain
-  'KEY_API_TINY' => 'your_tinyAPI_key', // Go to tiny.cloud for more information
-];
-
-```
-
 Install the dependecies
 
 ```bash
@@ -86,6 +71,7 @@ You con use XAMPP or WAMP for run the proyect but if you prefer you can use
 $ php -S localhost:8080
 ```
 
+The app will show you a form for create your config file
 
 And that's it!
 
