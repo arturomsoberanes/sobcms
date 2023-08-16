@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\Post;
@@ -48,7 +49,9 @@ class PostController
     if ($post_image) {
       // Get the image path from the database
       $image_path = $post_image;
-      unlink($image_path);
+      if (file_exists($image_path)) {
+        unlink($image_path);
+      }
       return true;
     }
     return false;
@@ -118,5 +121,4 @@ class PostController
       echo $e->getMessage();
     }
   }
-
 }
