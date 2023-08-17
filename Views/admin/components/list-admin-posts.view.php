@@ -8,7 +8,7 @@
         </div>
         <div class="col-md-4">
           <form class="d-inline-block ms-4" action="admin/delete/post/<?= $post->id ?>" method="post"
-            onsubmit="return confirm('¿Deseas eliminar la busqueda?')">
+            onsubmit="return confirm('Are you sure of delete this post?')">
             <button class="btn btn-danger bi bi-trash" href="posts"></button>
           </form>
           <a class="d-inline-block btn btn-primary bi bi-pencil-fill" href="admin/write/<?= $post->id ?>"></a>
