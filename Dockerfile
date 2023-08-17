@@ -35,6 +35,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install project dependencies
 RUN composer install
 
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html
+
 # This is for deploy my app on render.com wih the free plan
 # If you don't use render you can skip this two lines
 RUN touch /var/www/html/config.php
