@@ -71,6 +71,24 @@ You con use XAMPP or WAMP for run the proyect but if you prefer you can use
 $ php -S localhost:8080
 ```
 
+### Deploy with Docker
+
+You also can use docker for deploy, change the branch from main to deploy
+and remove the lines that i use for deploy my app on render.com.
+
+Once you're finished run the command for create the image
+
+```bash
+$ docker build -t sobcms .
+```
+
+Run the container
+
+```bash
+$ docker run -d -p 443:443 sobcms
+```
+
+
 The app will show you a form for create your config file
 
 And that's it!
